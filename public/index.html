@@ -17,11 +17,13 @@
     </form>
 
     <select v-model="selectedCurrency">
-      <option v-for="(rate, name) in currencies.rates" v-bind:value="currency">
+      <option v-for="(rate, name) in currencies.rates" :value="currency">
         {{name}}</option>
     </select>
 
-    <h1 v-if="selectedCurrency">{{selectedcurrency}}</h1>
+    <ul>
+      <li v-if="selectedCurrency">{{selectedcurrency}}</li>
+    </ul>
 
   </div>
 

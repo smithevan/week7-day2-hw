@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     data: {
       euros: null,
       currencies: {
-        rates: {} 
+        rates: {}
       },
       selectedCurrency: null
     },
@@ -18,6 +18,10 @@ document.addEventListener('DOMContentLoaded', () => {
         fetch('https://api.exchangeratesapi.io/latest')
         .then(response => response.json())
         .then(currencies => this.currencies = currencies)
+      },
+      calculateCurrency: function (){
+        const calculatedCurrency = selectedCurrency * currencies.rates
+        return calculatedCurrency
       }
     }
   });
